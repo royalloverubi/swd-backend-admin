@@ -27,4 +27,7 @@ public interface RoomRepository extends JpaRepository<Room, Integer> {
 
     @Query("SELECT r.price FROM Room r WHERE r.id = :id")
     Object getPriceById(@Param("id") Integer id);
+
+    @Query("SELECT r FROM Room r WHERE r.cyberGamingId = :cyberGamingId AND r.deleted = false ")
+    List<Room> getByCyberGamingId(@Param("cyberGamingId") Integer cyberGamingId);
 }

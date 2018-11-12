@@ -51,4 +51,10 @@ public class RoomController implements RoomApi {
         resul.put("Content", result);
         return ResponseEntity.ok(resul);
     }
+
+    @Override
+    public ResponseEntity<List<RoomDTO>> getByCyberId(Integer cyberId) {
+        List<RoomDTO> roomDTOS = roomService.getByCyberId(cyberId);
+        return ResponseEntity.ok(roomDTOS);
+    }
 }

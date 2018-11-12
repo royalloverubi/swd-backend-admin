@@ -21,7 +21,7 @@ public class Room {
     private Double price;
 
     @Column(name = "cyber_gaming_id")
-    private Integer cyber_gaming_id;
+    private Integer cyberGamingId;
 
     @Column(name = "is_active")
     private Boolean active;
@@ -61,12 +61,12 @@ public class Room {
         this.price = price;
     }
 
-    public Integer getCyber_gaming_id() {
-        return cyber_gaming_id;
+    public Integer getCyberGamingId() {
+        return cyberGamingId;
     }
 
-    public void setCyber_gaming_id(Integer cyber_gaming_id) {
-        this.cyber_gaming_id = cyber_gaming_id;
+    public void setCyberGamingId(Integer cyberGamingId) {
+        this.cyberGamingId = cyberGamingId;
     }
 
     public Boolean getActive() {

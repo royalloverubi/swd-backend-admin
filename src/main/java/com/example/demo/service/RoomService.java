@@ -15,4 +15,6 @@ public interface RoomService {
     RoomDTO getByID(Integer id);
 
     Boolean delete(Integer id);
+
+    List<RoomDTO> getByCyberId(Integer cyberId);
 }

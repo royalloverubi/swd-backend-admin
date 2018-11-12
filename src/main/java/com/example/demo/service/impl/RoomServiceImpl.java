@@ -69,4 +69,18 @@ public class RoomServiceImpl implements RoomService {
         roomRepository.deleteByID(id);
         return true;
     }
+
+    @Override
+    public List<RoomDTO> getByCyberId(Integer cyberId) {
+        List<Room> rooms = roomRepository.getByCyberGamingId(cyberId);
+        if(ObjectUtils.isEmpty(rooms)) {
+            return null;
+        }
+        ModelMapper modelMapper = new ModelMapper();
+        List<RoomDTO> roomDTOS = new ArrayList<>();
+        for (Room roo : rooms ) {
+            roomDTOS.add(modelMapper.map(roo, RoomDTO.class));
+        }
+        return roomDTOS;
+    }
 }

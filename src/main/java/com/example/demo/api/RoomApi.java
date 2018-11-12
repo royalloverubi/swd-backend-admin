@@ -32,4 +32,8 @@ public interface RoomApi {
     @ApiOperation(tags = {"Room",}, notes = "", value = "Delete Room")
     @DeleteMapping("/{id}")
     ResponseEntity<Map<String, Boolean>> delete(@PathVariable("id") Integer id);
+
+    @ApiOperation(tags = {"Room",}, notes = "", value = "Get Room By CyberId")
+    @GetMapping("/getByCyberId/{cyberId}")
+    ResponseEntity<List<RoomDTO>> getByCyberId(@RequestParam("cyberId") Integer cyberId);
 }
