@@ -43,7 +43,6 @@ public class ServiceRequestServiceImpl implements ServiceRequestService {
 
     @Override
     public ServiceRequestDTO create(ServiceRequestDTO serviceRequestDTO) {
-        serviceRequestDTO = updatePrice(serviceRequestDTO);
         ModelMapper modelMapper = new ModelMapper();
         ServiceRequest serviceRequest = modelMapper.map(serviceRequestDTO, ServiceRequest.class);
         serviceRequest = serviceRequestRepository.save(serviceRequest);
@@ -53,7 +52,6 @@ public class ServiceRequestServiceImpl implements ServiceRequestService {
 
     @Override
     public ServiceRequestDTO update(ServiceRequestDTO serviceRequestDTO) {
-        serviceRequestDTO = updatePrice(serviceRequestDTO);
         ModelMapper modelMapper = new ModelMapper();
         ServiceRequest serviceRequest = modelMapper.map(serviceRequestDTO, ServiceRequest.class);
         serviceRequest = serviceRequestRepository.saveAndFlush(serviceRequest);
@@ -127,21 +125,5 @@ public class ServiceRequestServiceImpl implements ServiceRequestService {
         return cal.getTime();
     }
 
-    private ServiceRequestDTO updatePrice(ServiceRequestDTO serviceRequestDTO) {
-        Double roomPrice = (Double) roomRepository.getPriceById(serviceRequestDTO.getRoomId());
-        Double configPrice = (Double) configurationRepository.getPriceId(serviceRequestDTO.getConfigurationId());
-        if(ObjectUtils.isEmpty(roomPrice)) {
-            roomPrice = 0D;
-        }
-        if(ObjectUtils.isEmpty(configPrice)) {
-            configPrice = 0D;
-        }
-        if (ObjectUtils.isEmpty(serviceRequestDTO.getDuration())) {
-            serviceRequestDTO.setDuration(0D);
-        }
-        Double totalPrice = (roomPrice + configPrice) * (serviceRequestDTO.getDuration() / 60);
-        totalPrice = Math.round(totalPrice *10)/ 10.0;
-        serviceRequestDTO.setTotalPrice(totalPrice);
-        return serviceRequestDTO;
-    }
+
 }
