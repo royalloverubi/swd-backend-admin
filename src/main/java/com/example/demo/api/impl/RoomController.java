@@ -53,7 +53,7 @@ public class RoomController implements RoomApi {
     }
 
     @Override
-    public ResponseEntity<List<RoomDTO>> getByCyberId(Integer cyberId) {
+    public ResponseEntity<List<RoomDTO>> getByCyberId(@PathVariable("cyberId") Integer cyberId) {
         List<RoomDTO> roomDTOS = roomService.getByCyberId(cyberId);
         return ResponseEntity.ok(roomDTOS);
     }
