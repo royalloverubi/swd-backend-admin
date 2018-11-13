@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@RequestMapping("/account")
+@RequestMapping("/accounts")
 public interface AccountApi {
 
     @ApiOperation(tags = {"Account",}, notes = "", value = "Create new Account")

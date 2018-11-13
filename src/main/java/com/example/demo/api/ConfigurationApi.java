@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@RequestMapping("/configuration")
+@RequestMapping("/configurations")
 public interface ConfigurationApi {
 
     @ApiOperation(tags = {"Configuration",}, notes = "", value = "Get Configuration By CyberId")

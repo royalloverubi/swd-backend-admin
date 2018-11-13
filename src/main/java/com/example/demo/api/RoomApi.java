@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@RequestMapping("/room")
+@RequestMapping("/rooms")
 public interface RoomApi {
 
     @ApiOperation(tags = {"Room",}, notes = "", value = "Get All Room")

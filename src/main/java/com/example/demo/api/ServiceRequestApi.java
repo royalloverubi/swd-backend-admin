@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@RequestMapping("/serviceRequest")
+@RequestMapping("/serviceRequests")
 public interface ServiceRequestApi {
 
     @ApiOperation(tags = {"ServiceRequest",}, notes = "", value = "Get ServiceRequest By Id")

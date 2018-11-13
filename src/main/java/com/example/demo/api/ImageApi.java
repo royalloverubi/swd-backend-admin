@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@RequestMapping("/image")
+@RequestMapping("/images")
 public interface ImageApi {
 
     @ApiOperation(tags = {"Image",}, notes = "", value = "Get Image By Cyber Id")
