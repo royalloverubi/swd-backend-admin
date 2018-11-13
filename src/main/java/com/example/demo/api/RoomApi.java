@@ -35,5 +35,5 @@ public interface RoomApi {
 
     @ApiOperation(tags = {"Room",}, notes = "", value = "Get Room By CyberId")
     @GetMapping("/getByCyberId/{cyberId}")
-    ResponseEntity<List<RoomDTO>> getByCyberId(@RequestParam("cyberId") Integer cyberId);
+    ResponseEntity<List<RoomDTO>> getByCyberId(@PathVariable("cyberId") Integer cyberId);
 }
