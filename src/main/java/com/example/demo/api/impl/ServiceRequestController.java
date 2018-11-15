@@ -39,7 +39,7 @@ public class ServiceRequestController implements ServiceRequestApi {
     }
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> delete(Integer id) {
+    public ResponseEntity<Map<String, Boolean>> delete(@PathVariable("id") Integer id) {
         Boolean result = serviceRequestService.delete(id);
         Map<String, Boolean> resul = new HashMap<>();
         resul.put("Content", result);
